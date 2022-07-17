@@ -1,0 +1,45 @@
+{
+    "name": "v8n-bd",
+    "version": "1.5.3",
+    "license": "MIT",
+    "description": "Valitation methods for v8n",
+    "type": "module",
+    "main": "lib/v8n.esm.js",
+    "module": "lib/v8n.esm.js",
+    "jsnext:main": "lib/v8n.esm.js",
+    "scripts": {
+        "build": "rollup -c ",
+        "doc": "docco src/v8n.js -l linear -t ../docco.jst -c ../docco.css",
+        "lint": "eslint src/v8n.js",
+        "test": "jest",
+        "minify": "terser ./v8n.js -o ./v8n.min.js -c -m --source-map \"filename='v8n.min.js.map'\"",
+        "weight": "npm run minify | gzip-size | pretty-bytes"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.15.8",
+        "@babel/preset-env": "^7.15.8",
+        "@babel/register": "^7.15.3",
+        "babel-jest": "^26.1.0",
+        "babel-plugin-istanbul": "^5.1.0",
+        "docco": "*",
+        "eslint": "1.10.x",
+        "gzip-size-cli": "^1.0.0",
+        "jest": "^26.1.0",
+        "pretty-bytes-cli": "^1.0.0",
+        "rollup": "1.10.0",
+        "rollup-plugin-babel": "4.3.2",
+        "rollup-plugin-browsersync": "1.0.0",
+        "rollup-plugin-commonjs": "9.3.4",
+        "rollup-plugin-eslint": "5.1.0",
+        "rollup-plugin-json": "4.0.0",
+        "rollup-plugin-multi-entry": "2.1.0",
+        "rollup-plugin-node-globals": "1.4.0",
+        "rollup-plugin-node-resolve": "4.2.3",
+        "rollup-plugin-terser": "4.0.4",
+        "terser": "^4.6.11"
+    },
+    "dependencies": {
+        "underscore-bd": "boldhousedev/underscore",
+        "v8n": "^1.3"
+    }
+}
